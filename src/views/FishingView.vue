@@ -5,7 +5,20 @@
       <div class="row">
         <div class="col-md-4 p-2 mt-auto py-3">
           <div class="col p-2">
-            <img src="assets/Lake.jpg" class="img-fluid" />
+            <Carousel
+              :navigation="true"
+              :pagination="true"
+              :startAutoPlay="true"
+              :timeout="5000"
+              class="carousel"
+              v-slot="{ currentSlide }"
+            >
+              <Slide v-for="(slide, index) in carouselSlides" :key="index">
+                <div v-show="currentSlide === index + 1" class="slide-info">
+                  <img class="img-fluid" :src="require(`../assets/${slide}.jpg`)" alt="" />
+                </div>
+              </Slide>
+            </Carousel>
           </div>
         </div>
         <div class="col-md-8 pt-4">
@@ -73,14 +86,45 @@
 </template>
 
 <script>
+import { event } from 'vue-gtag';
+import { computed, reactive } from 'vue';
+import { useHead } from '@vueuse/head'
+
 // @ is an alias to /src
 import HeaderVue from "@/components/HeaderVue.vue";
+import Carousel from "../components/CarouselVue.vue";
+import Slide from "../components/SlideVue.vue";
 
 export default {
   name: 'FishingView',
   components: {
-    HeaderVue,
-  }
+    HeaderVue, Carousel, Slide
+  },
+  setup() {
+    const siteData = reactive({
+      title: `Birch Farm - Cat Rough Fishing`,
+      description: `Cat Rough Fishery at Birch Farm, Mouldsworth, Cheshire`,
+    })
+
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+      ],
+    })
+
+    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage"];
+    // return { carouselSlides };
+
+    const fishingPage = () => {
+      event('fishingPage', { method: 'Google' })
+    }
+    return {carouselSlides: carouselSlides, googleAnalytics: fishingPage};
+  },  
 }
 </script>
 

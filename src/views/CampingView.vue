@@ -77,6 +77,10 @@
 </template>
 
 <script>
+import { computed, reactive } from 'vue';
+import { useHead } from '@vueuse/head'
+import { event } from 'vue-gtag';
+
 // @ is an alias to /src
 import HeaderVue from "@/components/HeaderVue.vue";
 import Carousel from "../components/CarouselVue.vue";
@@ -88,9 +92,29 @@ export default {
     HeaderVue, Carousel, Slide
   },
   setup() {
-    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage"];
+    const siteData = reactive({
+      title: `Birch Farm - Camping`,
+      description: `Birch Farm Camping in Mouldsworth, Cheshire`,
+    })
 
-    return { carouselSlides };
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+      ],
+    })
+
+    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage"];
+    // return { carouselSlides };
+
+    const campingPage = () => {
+      event('campingPage', { method: 'Google' })
+    }
+    return {carouselSlides: carouselSlides, googleAnalytics: campingPage};
   },
 }
 </script>

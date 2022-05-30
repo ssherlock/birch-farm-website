@@ -57,6 +57,10 @@
 </template>
 
 <script>
+import { computed, reactive } from 'vue';
+import { useHead } from '@vueuse/head'
+import { event } from 'vue-gtag';
+
 // @ is an alias to /src
 import FlipCard from "@/components/FlipCard.vue";
 import Carousel from "@/components/CarouselVue.vue";
@@ -69,9 +73,29 @@ export default {
     FlipCard, Carousel, Slide, HeaderVue
   },
   setup() {
-    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage", "Lake3"];
+    const siteData = reactive({
+      title: `Birch Farm - Home`,
+      description: `Birch Farm Camping and Fishing in Mouldsworth, Cheshire`,
+    })
 
-    return { carouselSlides };
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+      ],
+    })
+
+    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage", "Lake3"];
+    // return { carouselSlides };
+
+    const homePage = () => {
+      event('homePage', { method: 'Google' })
+    }
+    return {carouselSlides: carouselSlides, googleAnalytics: homePage};
   },
 }
 </script>

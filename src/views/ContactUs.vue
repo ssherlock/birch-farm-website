@@ -36,6 +36,10 @@
 </template>
 
 <script>
+import { event } from 'vue-gtag';
+import { computed, reactive } from 'vue';
+import { useHead } from '@vueuse/head'
+
 // @ is an alias to /src
 import HeaderVue from "@/components/HeaderVue.vue";
 
@@ -43,7 +47,29 @@ export default {
   name: 'ContactUs',
   components: {
     HeaderVue,
-  }
+  },
+  setup() {
+    const siteData = reactive({
+      title: `Birch Farm - Contact Us`,
+      description: `Contact Birch Farm, Mouldsworth, Cheshire`,
+    })
+
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+      ],
+    })
+
+    const contactUsPage = () => {
+      event('contactUsPage', { method: 'Google' })
+    }
+    return {contactUsPage};
+  }  
 }
 </script>
 
