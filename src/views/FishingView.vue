@@ -15,7 +15,7 @@
             >
               <Slide v-for="(slide, index) in carouselSlides" :key="index">
                 <div v-show="currentSlide === index + 1" class="slide-info">
-                  <img class="img-fluid" :src="require(`../assets/${slide}.jpg`)" alt="" />
+                  <img class="img-fluid" :src="require(`../assets/fishing/${slide}.jpg`)" alt="Slideshow picture" />
                 </div>
               </Slide>
             </Carousel>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-sm-6">
               <h3 class="mt-1 "><u>Prices</u></h3>
-              <p><strong>Day Ticket (up to 2 rods):</strong> £10 (no change given)
+              <p><strong>Day Ticket (up to 2 rods):</strong> £10 (no change given)<br>
               <em>Turn up, find a peg and somebody will be round to collect payment at some point</em></p>
               <p><strong>Club Fishing:</strong> None</p>
               <p><strong>Matches:</strong> None</p>
@@ -117,7 +117,12 @@ export default {
       ],
     })
 
-    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage"];
+    const carouselSlides = [
+      "fishing1", "fishing7", "fishing2", "fishing8",
+      "fishing6", "fishing3", "fishing5", "fishing9",
+      "fishing4","fishing10", "fishing11", "fishing12",
+      "fishing13", "fishing14",
+      ];
     // return { carouselSlides };
 
     const fishingPage = () => {

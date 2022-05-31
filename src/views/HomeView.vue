@@ -89,7 +89,7 @@ export default {
       ],
     })
 
-    const carouselSlides = ["CampSite", "Caravan", "Lake", "CaravanStorage", "Lake3"];
+    const carouselSlides = ["camping2", "fishing12", "Caravan", "Lake", "CaravanStorage", "fishing5", "Lake3"];
     // return { carouselSlides };
 
     const homePage = () => {
