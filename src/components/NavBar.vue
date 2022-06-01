@@ -6,9 +6,9 @@
           data-bs-toggle="!visible?'collapse':''"
           data-bs-target="#navContent" 
           @click="visible=!visible"
-          aria-bs-controls="navContent" 
-          aria-bs-expanded="false" 
-          aria-bs-label="Toggle navigation"
+          aria-controls="navContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
           >  
           <span class="navbar-toggler-icon"></span>
         </button>
