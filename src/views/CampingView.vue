@@ -44,8 +44,8 @@
               <h3 class="mt-1"><u>Finding Us</u></h3>
               <p>For SatNavs please use CH3 8AN or <a href="https://what3words.com/bouncing.jukebox.straying" target="_blank">///bouncing.jukebox.straying</a> (What3Words)</p>
               <div class="row">
-                <h3 class="mt-1"><u>Contact Us</u></h3>
-                <p>For further details or questions please contact: <a href="mailto:camping@birchfarm.com">camping@birchfarm.com</a></p>
+                <h3 class="mt-1"><u>Booking / Contact Us</u></h3>
+                <p>To book or for further details please contact: <a href="mailto:camping@birchfarm.com">camping@birchfarm.com</a></p>
                 <p><a href="https://www.facebook.com/BirchFarmCamping" target="_blank"><img src="../assets/Facebook.jpg" class="rounded-3" title="Find Us On Facebook" alt="Find Us On Facebook" /></a></p>
               </div>
             </div>

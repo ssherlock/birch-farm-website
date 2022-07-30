@@ -1,5 +1,5 @@
 <template>
-  <div class="flip-box">
+ <div class="flip-box">
     <div class="flip-box-inner">
       <div class="flip-box-front">
         <h2 class="opaque-header">{{ frontText }}</h2>
@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script>

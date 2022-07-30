@@ -35,7 +35,7 @@
           <div class="row">
             <div class="col-sm-6">
               <h3 class="mt-1"><u>Opening Hours</u></h3>
-              <p>8am until dusk, 7 days a week</p>
+              <p>8am until 8pm, 7 days a week</p>
             </div>
             <div class="col-sm-6">
               <h3 class="mt-1 "><u>Prices</u></h3>
@@ -51,8 +51,7 @@
             <h3 class="mt-1"><u>Rules</u></h3>
             <p>
               <ul>
-                <li>NO Night fishing</li>
-                <li>Social distancing must be adhered to at ALL times</li>
+                <li>No Night fishing</li>
                 <li>No Spectators</li>
                 <li>No children under 14 years to be left unsupervised at any time</li>
                 <li>Barbless hooks only</li>

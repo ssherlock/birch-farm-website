@@ -29,4 +29,20 @@ if (process.env.NODE_ENV === 'production') {
       console.error('Error during service worker registration:', error)
     }
   })
+
+  // 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+  // 'https://fonts.googleapis.com/css?family=PT+Sans+Caption',
+  // 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+  // 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js',
+
+  // const CACHE_NAME = 'static-cache';
+
+  // const FILES_TO_CACHE = [
+
+
+  //   './img/*.jpg',
+  //   'https://www.sherlock.co.uk/static/css/sherlock.css', 
+  //   'https://www.birchfarm.com', 
+  //   'https://www.birchfarm.com/camping',
+  // ];
 }
